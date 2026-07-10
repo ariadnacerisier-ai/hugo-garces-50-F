@@ -1,0 +1,66 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  font-weight: var(--fw-bold);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(2.4rem, 6vw, var(--fs-3xl));
+}
+
+h3 {
+  font-size: var(--fs-2xl);
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.kicker,
+.section-index,
+.event-label,
+.countdown-label,
+.timeline-time,
+.form-label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+.kicker {
+  color: var(--color-gold);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.3em;
+}
+
+.section-index {
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

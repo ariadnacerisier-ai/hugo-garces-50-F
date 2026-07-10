@@ -1,0 +1,48 @@
+{
+  "status": "OK",
+  "errors": [],
+  "warnings": [],
+  "zip_file_count": 37,
+  "images": {
+    "hero-desktop.png": {
+      "format": "PNG",
+      "size": [
+        1536,
+        1024
+      ],
+      "kb": 2318.3
+    },
+    "hero-mobile.png": {
+      "format": "PNG",
+      "size": [
+        941,
+        1672
+      ],
+      "kb": 2090.9
+    },
+    "evento-fecha-futbol.png": {
+      "format": "PNG",
+      "size": [
+        1400,
+        1050
+      ],
+      "kb": 1366.4
+    },
+    "evento-hora-americano.png": {
+      "format": "PNG",
+      "size": [
+        1400,
+        1050
+      ],
+      "kb": 1359.4
+    },
+    "evento-lugar-f1.png": {
+      "format": "PNG",
+      "size": [
+        1400,
+        1050
+      ],
+      "kb": 1349.3
+    }
+  }
+}

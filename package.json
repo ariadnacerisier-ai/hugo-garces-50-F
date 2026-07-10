@@ -1,0 +1,17 @@
+{
+  "name": "hugo-garces-50",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Invitación digital para los 50 años de Hugo Garcés.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.1.3"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

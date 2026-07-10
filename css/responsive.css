@@ -1,0 +1,153 @@
+@media (max-width: 1024px) {
+  section {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .event-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    min-height: auto;
+    padding: var(--space-8) var(--space-4);
+  }
+
+  #hero {
+    min-height: 100svh;
+    padding: 0;
+  }
+
+  .btn {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .countdown-card {
+    min-height: 145px;
+  }
+
+  .event-grid,
+  .form-grid,
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card,
+  .event-card:last-child,
+  .menu-card,
+  .form-group--full,
+  .form-submit {
+    grid-column: auto;
+  }
+
+  .event-card {
+    min-height: 430px;
+  }
+
+  .event-card:nth-child(1) {
+    --event-card-position: center 28%;
+  }
+
+  .event-card:nth-child(2) {
+    --event-card-position: center 32%;
+  }
+
+  .event-card:nth-child(3) {
+    --event-card-position: center 27%;
+  }
+
+  .timeline-circuit {
+    padding-left: 38px;
+  }
+
+  .timeline-track,
+  .timeline-progress {
+    left: 15px;
+    transform: none;
+  }
+
+  .timeline-item {
+    display: block;
+    min-height: auto;
+    padding-left: 24px;
+  }
+
+  .timeline-node {
+    position: absolute;
+    top: 50%;
+    left: -36px;
+    transform: translateY(-50%);
+  }
+
+  .timeline-item:nth-child(odd) .timeline-card,
+  .timeline-item:nth-child(even) .timeline-card {
+    width: 100%;
+    text-align: left;
+    justify-self: auto;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-lap,
+  .timeline-item:nth-child(even) .timeline-lap {
+    left: auto;
+    right: var(--space-4);
+  }
+
+  .timeline-car {
+    left: 20px;
+    width: 50px;
+  }
+
+  .timeline-start,
+  .timeline-finish {
+    left: 40px;
+  }
+
+  .speedometer {
+    right: 14px;
+    bottom: 14px;
+    width: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 0;
+  }
+
+  .countdown-card {
+    min-height: 128px;
+    padding: var(--space-4);
+  }
+
+  .event-card {
+    min-height: 390px;
+    padding: 1.35rem;
+  }
+
+  .speedometer {
+    width: 62px;
+    opacity: 0.85;
+  }
+
+  .speedometer-unit {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  .card:hover,
+  .btn:hover,
+  .whatsapp-confirm__button:hover {
+    transform: none;
+  }
+}
