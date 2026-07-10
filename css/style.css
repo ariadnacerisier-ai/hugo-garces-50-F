@@ -386,3 +386,38 @@ footer::before {
 @media (max-width: 768px) {
   #quotes::before { filter: blur(10px); }
 }
+/* ============================================================
+   MENOR DESENFOQUE EN FONDOS
+============================================================ */
+
+#countdown::before {
+  filter: blur(6px);
+  transform: scale(1.03);
+}
+
+#event::before {
+  filter: blur(6px) saturate(0.95);
+  transform: scale(1.03);
+}
+
+#timeline::before {
+  filter: blur(6px);
+  transform: scale(1.03);
+}
+
+#quotes::before {
+  filter: blur(6px);
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  #countdown::before,
+  #timeline::before,
+  #quotes::before {
+    filter: blur(4px);
+  }
+
+  #event::before {
+    filter: blur(4px) saturate(0.95);
+  }
+}
