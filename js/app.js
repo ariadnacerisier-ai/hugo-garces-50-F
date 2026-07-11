@@ -1,67 +1,56 @@
-(() => {
-  "use strict";
+const form = document.querySelector("#rsvp-form");
+const status = document.querySelector("#form-status");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("[data-scroll]").forEach((link) => {
-      link.addEventListener("click", (event) => {
-        const selector = link.getAttribute("data-scroll");
-        const target = document.querySelector(selector);
+if (form && status) {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-        if (!target) return;
+    if (!form.checkValidity()) {
+      form.reportValidity();
 
-        event.preventDefault();
+      status.textContent =
+        "Revisa los campos obligatorios antes de continuar.";
 
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
+      status.className =
+        "form-status is-visible is-error";
+
+      return;
+    }
+
+    const button = form.querySelector(
+      'button[type="submit"]'
+    );
+
+    const originalText = button.textContent;
+
+    button.disabled = true;
+    button.textContent = "Enviando...";
+
+    try {
+      await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors"
       });
-    });
 
-    const form = document.querySelector("#rsvp-form");
-    const status = document.querySelector("#form-status");
+      status.textContent =
+        "Tu asistencia fue enviada correctamente. ¡Gracias!";
 
-    if (form && status) {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
+      status.className =
+        "form-status is-visible is-success";
 
-        if (!form.checkValidity()) {
-          form.reportValidity();
+      form.reset();
 
-          status.textContent =
-            "Revisa los campos obligatorios antes de continuar.";
+    } catch (error) {
+      status.textContent =
+        "No fue posible enviar la confirmación. Utiliza el botón de WhatsApp.";
 
-          status.className =
-            "form-status is-visible is-error";
+      status.className =
+        "form-status is-visible is-error";
 
-          return;
-        }
-
-        const name =
-          document.querySelector("#name")?.value.trim() || "Invitado";
-
-        status.textContent =
-          `${name}, tu asistencia ha sido registrada en esta vista. ` +
-          "También puedes enviarla por WhatsApp con el botón inferior.";
-
-        status.className =
-          "form-status is-visible is-success";
-
-        form.reset();
-      });
+    } finally {
+      button.disabled = false;
+      button.textContent = originalText;
     }
   });
-
-  window.addEventListener("load", () => {
-    const loader = document.querySelector("#loader");
-    if (!loader) return;
-
-    window.setTimeout(() => {
-      loader.classList.add("is-hidden");
-
-      window.setTimeout(() => {
-        loader.remove();
-      }, 900);
-    }, 1200);
-  });
-})();
+}
